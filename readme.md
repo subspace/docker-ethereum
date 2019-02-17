@@ -1,16 +1,18 @@
 Simple Docker image with Ethereum full node running
 
+Just pull one of the images from Docker Hub:
+```
+subspacelabs/ethereum
+subspacelabs/ethereum:arm32v7
+subspacelabs/ethereum:arm64v8
+```
+
 ### Building Docker image
 In order to get source code and build an image run:
 ```bash
 git clone git@github.com:subspace/docker-ethereum.git
 cd docker-ethereum
 docker build -t subspacelabs/ethereum .
-```
-
-If you want to push new image to Subspace's Docker Hub organization afterwards:
-```bash
-docker push subspacelabs/ethereum
 ```
 
 ### Building Docker image for Raspberry PI (32-bit ARMv7)
@@ -21,7 +23,10 @@ cd docker-ethereum
 docker build -t subspacelabs/ethereum:arm32v7 -f Dockerfile-arm32v7 .
 ```
 
-If you want to push new image to Subspace's Docker Hub organization afterwards:
+### Building Docker image for 64-bit ARMv8
+In order to get source code and build an image run:
 ```bash
-docker push subspacelabs/ethereum:arm32v7
+git clone git@github.com:subspace/docker-ethereum.git
+cd docker-ethereum
+docker build -t subspacelabs/ethereum:arm64v8 -f Dockerfile-arm64v8 .
 ```
